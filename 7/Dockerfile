@@ -30,7 +30,7 @@ RUN set -ex; \
 	done
 
 # Last Modified: 2018-01-24
-ENV GCC_VERSION 7.3.0-RC-20180122
+ENV GCC_VERSION 7.3.0
 # Docker EOL: 2018-08-14
 
 RUN set -ex; \
@@ -43,7 +43,7 @@ RUN set -ex; \
 	apt-get install -y --no-install-recommends $buildDeps; \
 	rm -r /var/lib/apt/lists/*; \
 	\
-	curl -fSL "http://www.netgull.com/gcc/snapshots/$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" -o gcc.tar.xz; \
+	curl -fSL "http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" -o gcc.tar.xz; \
 	#curl -fSL "https://ftpmirror.gnu.org/gcc/gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" -o gcc.tar.xz.sig; \
 	#gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; \
 	mkdir -p /usr/src/gcc; \
